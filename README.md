@@ -1,6 +1,7 @@
 # Youtube 강좌 
   - https://www.youtube.com/watch?v=3JminDpCJNE
   - nest.js 로 게시판 CRUD 
+  - 뭐든 많이 해봐야함 많이 뚜드려봐야 함
 
 ### 주요 기능 
   - google login OAuth2
@@ -38,8 +39,20 @@
   - Services, Repository, Factory, Helper 포함 
   - 이들은 종속성으로 주입할 수 있다. 
 
-### 모델 정의 
+### Model 정의 
   - Class 를 이용하거나 Interface를 이용한다. 
   - Interface : 변수의 타입만 체크함 
   - Classes : 변수의 타입 뿐만 아니라 인스턴스 생성도 가능하다. 
   
+### DTO 
+  - Data Tranfer Object : 계층과 데이터 교환을 위한 객체 Class 를 이용하여 정의하라고 함
+    - 파이프와 같은 기능 사용이 용이하기 때문에 Class 사용 
+
+###
+```javascript 
+   함수명(@Param('id') id: string) : Board{
+     return blablabla
+} 
+
+//return의 자료형 
+```
