@@ -75,3 +75,28 @@
   - Global-level Pipes - 전체 영역 : main.ts 에 적용 
 
 #### PIPE 사용하는 법 (nestjs 에 정의되어있는 pipe)
+  - ValidationPipe
+  - ParseIntPipe
+  - ParseBoolPipe
+  - ParseArrayPipe
+  - ParseUUIDPipe
+  - DefaultValuePipe
+
+```javascript
+  //ParseIntPipe example
+  @Get(':id')
+  findOne(@Param('id', ParseIntPipe) id: number){
+    return ;
+  }
+```
+시간이 왜이리 안가냐 
+
+### 파이프를 이용한 유효성 체크
+ 
+```bash
+  npm install class-validator class-transformer --save
+``` 
+  #### ex)ValidationPipe
+
+    1. 해당 DTO 에 Decorator 기입해준다. 
+    2. handler 에 @UsePipes(ValidationPipe) Decorator 추가.

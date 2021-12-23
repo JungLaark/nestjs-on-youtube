@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Delete,
+    Get,
+    Param,
+    Patch,
+    Post,
+    UsePipes,
+    ValidationPipe,
+} from '@nestjs/common';
 import { Board, BoardStatus } from './board.model';
 import { BoardsService } from './boards.service';
 import { CreateBoardDto } from './dto/create-board.dto';
@@ -15,7 +25,10 @@ export class BoardsController {
     }
 
     //Board 추가
+    //내용이 비어있을 경우 제어를 해야한다.
+    //이는 pipe를 이용하여 한다.
     @Post()
+    @UsePipes(ValidationPipe)
     createBoard(@Body() createBoardDto: CreateBoardDto) {
         return this.boardsService.createBoard(createBoardDto);
     }
@@ -37,7 +50,7 @@ export class BoardsController {
 
     //Board Status 업데이트
     @Patch('/:id/status')
-    updateBoardStatus(@Param('id') id: string, @Body('status') status: BoardStatus): Boards {
+    updateBoardStatus(@Param('id') id: string, @Body('status') status: BoardStatus) {
         this.boardsService.updateBoardStatus(id, status);
     }
 }
