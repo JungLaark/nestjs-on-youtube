@@ -8,6 +8,11 @@
   - passport
   - json webtoken
   - uuid 
+  - 게시판 CRUD
+  - Streaming 
+  - AWS 아마 이제 11개월 남지 않았겠니?  
+  - Swagger 
+  - 아임포트?
 
 ### 실행 
   - npm run start:dev
@@ -52,7 +57,21 @@
 ```javascript 
    함수명(@Param('id') id: string) : Board{
      return blablabla
-} 
+} //후회는 없는데 여기를 선택한 것이 후회가 될 뿐이다. 
 
 //return의 자료형 
 ```
+
+### PIPE
+  - @Injectable() 이라는 Decorator 주석이 달린 CLASS.
+  - data transformation 과 data validation 을 위해서 사용됨.
+    - Data Transformation : 입력 데이터를 원하는 형식으로 변환
+    - Data Validation : 유효성 검증 
+  - request -> pipe -> 해당 request controller handler
+  
+#### PIPE 사용하는 법 (customized) 
+  - Handler-level Pipes - 핸들러(함수) 전체에 적용됨
+  - Parameter-level Pipes - parameter 하나씩 적용 
+  - Global-level Pipes - 전체 영역 : main.ts 에 적용 
+
+#### PIPE 사용하는 법 (nestjs 에 정의되어있는 pipe)

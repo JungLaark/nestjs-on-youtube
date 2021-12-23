@@ -2,6 +2,6 @@
 게시물 생성을 위한 DTO*/
 
 export class CreateBoardDto {
-    title: string;
-    description: string;
+    title: string,
+    description: string,
 }
